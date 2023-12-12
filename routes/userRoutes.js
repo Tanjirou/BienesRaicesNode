@@ -1,10 +1,11 @@
 import  express  from "express";
-
+import { formLogin, formRegister } from "../controllers/UserController.js";
 const router = express.Router();
 
 router.get('/', (req,res) => res.json({msg: 'Hola Mundo con express'}));
 
-router.post('/', (req,res) => res.json({msg:'Respuesta de tipo post'}));
+router.get('/login', formLogin );
+router.get('/register', formRegister);
 //grouping equal routes but with different methods
 // router.route('/')
 //     .get(function(req,res){
